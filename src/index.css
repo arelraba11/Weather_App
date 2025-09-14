@@ -1,52 +1,115 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Global */
 body {
-  font-family: 'montseratt', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212; /* fallback */
+  color: #fff;
+  line-height: 1.6;
 }
 
+/* App wrapper */
 .app {
+  min-height: 100vh;
   background-image: url('./assets/thumbnails_5.jpg');
   background-size: cover;
-  background-position: bottom;
-  transition: 0.4s ease-out;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  transition: background-image 0.6s ease-in-out, filter 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-main{
+/* Main content with glass effect */
+main {
+  width: 100%;
+  max-width: 600px;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom,rgba(0,0,0,0.2),rgba(0,0,0,0.75));
-  padding: 25px;
+  padding: 30px 20px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.85));
+  border-radius: 12px;
+  backdrop-filter: blur(4px);
 }
 
-.search-box{
+/* Search */
+.search-box {
   width: 100%;
-  margin: 0 0 75px;
+  margin: 0 0 60px;
+  text-align: center;
 }
 
-.search-box .search-bar{
-  display: block;
+.search-box .search-bar {
   width: 100%;
-  padding: 15px;
-
-  appearance: none;
-  background: none;
+  padding: 15px 18px;
   border: none;
   outline: none;
+  appearance: none;
 
-  background-color: rgba(255,255,255,0.5);
-  border-radius: 0px 0px 16px 16px;
-  margin-top: -25px;
-
-  box-shadow: 0px 5px rgba(0,0,0,0.2);
-
+  font-size: 18px;
   color: #313131;
-  font-size: 20px;
-  transition: 0.4s ease;
+
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.5);
+
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.25);
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.search-box .search-bar:focus{
-  background-color: rgba(255,255,255,0.75);
+.search-box .search-bar:focus {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.02);
+}
+
+/* Location & Weather info */
+.location-box {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.location-box .location {
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.location-box .date {
+  font-size: 16px;
+  color: #ddd;
+  margin-top: 8px;
+}
+
+/* Weather display */
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  text-shadow: 2px 4px rgba(0,0,0,0.4);
+}
+
+.weather-box .weather {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Error messages */
+.error {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+  border-radius: 6px;
+  color: #ffb3b3;
+  text-align: center;
+  font-size: 16px;
 }
